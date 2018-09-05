@@ -46,7 +46,7 @@ module QuickSearch
         'search_field' => 'all_fields',
         'q' => http_request_queries['not_escaped'],
         'utf8' => true,
-        'per_page' => 5,
+        'per_page' => @per_page,
         'format' => 'json'
       }
     end
