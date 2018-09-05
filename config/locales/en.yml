@@ -1,0 +1,10 @@
+en:
+  arclight_search:
+    display_name: "Collections"
+    short_display_name: "Collections"
+    search_form_placeholder: "Search Collections"
+    module_callout: "Search Collections"
+    error_service_message: "searching Collections"
+    no_results_service_message: "a different search"
+    no_results_link: "http://169.226.92.29/"
+    loaded_link: "http://169.226.92.29/catalog?search_field=all_fields&q="
