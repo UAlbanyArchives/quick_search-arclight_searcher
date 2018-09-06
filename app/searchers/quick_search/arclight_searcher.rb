@@ -52,7 +52,7 @@ module QuickSearch
     end
 
     def collection_builder(uri)
-      collection_link = URI::join(base_url, +"/" + uri.tr(".", "-"))
+      collection_link = URI::join(base_url, +"/catalog/" + uri.tr(".", "-"))
 
       collection_link
     end
