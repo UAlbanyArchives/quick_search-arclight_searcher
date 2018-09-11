@@ -2,7 +2,7 @@ module QuickSearch
   class ArclightSearcher < QuickSearch::Searcher
 
     def search
-      resp = @http.get(base_url, parameters)
+      resp = @http.get(base_url, parameters.to_query)
       @response = JSON.parse(resp.body)
     end
 
