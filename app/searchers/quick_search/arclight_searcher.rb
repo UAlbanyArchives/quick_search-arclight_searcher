@@ -38,7 +38,7 @@ module QuickSearch
     end
 
     def base_url
-      "http://169.226.92.29/catalog"
+      "http://lib-espy-ws-p101.its.albany.edu/collections/catalog"
     end
 
     def parameters
@@ -62,7 +62,7 @@ module QuickSearch
     end
 
     def loaded_link
-      "http://169.226.92.29?search_field=all_fields&q=" + http_request_queries['not_escaped']
+      "http://lib-espy-ws-p101.its.albany.edu/collections?search_field=all_fields&q=" + http_request_queries['not_escaped']
     end
 
   end

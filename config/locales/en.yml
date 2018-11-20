@@ -6,5 +6,5 @@ en:
     module_callout: "Search Collections"
     error_service_message: "searching Collections"
     no_results_service_message: "a different search"
-    no_results_link: "http://169.226.92.29/"
-    loaded_link: "http://169.226.92.29/catalog?search_field=all_fields&q="
+    no_results_link: "http://lib-espy-ws-p101.its.albany.edu/collections/"
+    loaded_link: "http://lib-espy-ws-p101.its.albany.edu/collections/catalog?search_field=all_fields&q="
