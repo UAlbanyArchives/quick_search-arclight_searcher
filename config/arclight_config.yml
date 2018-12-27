@@ -1,3 +1,3 @@
 defaults: &defaults
-  base_url: "http://lib-espy-ws-p101.its.albany.edu/collections/catalog"
-  loaded_link: "http://lib-espy-ws-p101.its.albany.edu/collections/repositories"
+  base_url: "https://archives.albany.edu/collections/catalog"
+  loaded_link: "https://archives.albany.edu/collections/repositories"

@@ -38,7 +38,7 @@ module QuickSearch
     end
 
     def base_url
-      "http://lib-espy-ws-p101.its.albany.edu/collections/catalog"
+      "https://archives.albany.edu/collections/catalog"
     end
 
     def parameters
@@ -62,7 +62,7 @@ module QuickSearch
     end
 
     def loaded_link
-      "http://lib-espy-ws-p101.its.albany.edu/collections?search_field=all_fields&q=" + http_request_queries['not_escaped']
+      "https://archives.albany.edu/collections?search_field=all_fields&q=" + http_request_queries['not_escaped']
     end
 
   end
