@@ -39,7 +39,7 @@ module QuickSearch
     end
 
     def base_url
-      "https://archives.albany.edu/collections/catalog"
+      "https://archives.albany.edu/description/catalog"
     end
 
     def parameters
@@ -53,7 +53,7 @@ module QuickSearch
     end
 
     def collection_builder(uri)
-      collection_link = URI::join(base_url, +"/collections/catalog/" + uri.tr(".", "-"))
+      collection_link = URI::join(base_url, +"/description/catalog/" + uri.tr(".", "-"))
 
       collection_link
     end
@@ -63,7 +63,7 @@ module QuickSearch
     end
 
     def loaded_link
-      "https://archives.albany.edu/collections?search_field=all_fields&q=" + http_request_queries['not_escaped']
+      "https://archives.albany.edu/description?search_field=all_fields&q=" + http_request_queries['not_escaped']
     end
 
   end

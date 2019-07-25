@@ -1,3 +1,3 @@
 defaults: &defaults
-  base_url: "https://archives.albany.edu/collections/catalog"
-  loaded_link: "https://archives.albany.edu/collections/repositories"
+  base_url: "https://archives.albany.edu/description/catalog"
+  loaded_link: "https://archives.albany.edu/description/repositories"
