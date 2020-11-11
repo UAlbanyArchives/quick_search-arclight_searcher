@@ -26,6 +26,30 @@ module QuickSearch
           if value['attributes'].key?('collection_ssm')
             result.collection = [value['attributes']['collection_ssm'][0], collection_builder(value['attributes']['ead_ssi']).to_s]
           end
+          
+          if value['attributes'].key?('parent_unittitles_ssm')
+              if value['attributes']['parent_unittitles_ssm'].length > 1
+                result.series = value['attributes']['parent_unittitles_ssm'][1]       
+                result.series_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi'] + value['attributes']['parent_ssm'][1])         
+              end
+              if value['attributes']['parent_unittitles_ssm'].length > 2
+                result.subseries = value['attributes']['parent_unittitles_ssm'][2]       
+                result.subseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi'] + value['attributes']['parent_ssm'][2])         
+              end 
+              if value['attributes']['parent_unittitles_ssm'].length > 3
+                result.subsubseries = value['attributes']['parent_unittitles_ssm'][2]       
+                result.subsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi'] + value['attributes']['parent_ssm'][2])         
+              end 
+              if value['attributes']['parent_unittitles_ssm'].length > 4
+                result.subsubsubseries = value['attributes']['parent_unittitles_ssm'][2]       
+                result.subsubsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi'] + value['attributes']['parent_ssm'][2])         
+              end 
+          end
+          
+          if value['attributes'].key?('repository_ssm')
+            result.collecting_area = value['attributes']['repository_ssm'][0]
+          end
+          
           if value['attributes']['has_online_content_ssim'][0] == "true"
             result.availability = "online content"
           end
