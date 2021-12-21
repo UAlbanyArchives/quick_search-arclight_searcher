@@ -1,10 +1,10 @@
 en:
   arclight_search:
-    display_name: "Collections"
-    short_display_name: "Collections"
-    search_form_placeholder: "Search Collections"
-    module_callout: "Search Collections"
-    error_service_message: "searching Collections"
+    display_name: "All Collections"
+    short_display_name: "All Collections"
+    search_form_placeholder: "Search All Collections"
+    module_callout: "Search All Collections"
+    error_service_message: "searching all collections"
     no_results_service_message: "a different search"
-    no_results_link: "https://archives.albany.edu/collections/"
-    loaded_link: "https://archives.albany.edu/collections/catalog?search_field=all_fields&q="
+    no_results_link: "https://archives.albany.edu/description/"
+    loaded_link: "https://archives.albany.edu/description/catalog?search_field=all_fields&q="
