@@ -1,7 +1,7 @@
 en:
   arclight_search:
-    display_name: "All Collections"
-    short_display_name: "All Collections"
+    display_name: "Archives & Manuscripts"
+    short_display_name: "Archives & Manuscripts"
     search_form_placeholder: "Search All Collections"
     module_callout: "Search All Collections"
     error_service_message: "searching all collections"
