@@ -7,4 +7,4 @@ en:
     error_service_message: "searching all collections"
     no_results_service_message: "a different search"
     no_results_link: "https://archives.albany.edu/description/"
-    loaded_link: "https://archives.albany.edu/description/catalog?search_field=all_fields&q="
+    loaded_link: "https://archives.albany.edu/description/catalog?search_field=all_fields&group=true&q="
