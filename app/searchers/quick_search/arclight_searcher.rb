@@ -30,19 +30,19 @@ module QuickSearch
           if value['attributes'].key?('parent_unittitles_ssm')
               if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 1
                 result.series = value['attributes']['parent_unittitles_ssm']['attributes']['value'][1]       
-                result.series_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssm']['attributes']['value'][1])         
+                result.series_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssim']['attributes']['value'][1])         
               end
               if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 2
                 result.subseries = value['attributes']['parent_unittitles_ssm']['attributes']['value'][2]       
-                result.subseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssm']['attributes']['value'][2])         
+                result.subseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssim']['attributes']['value'][2])         
               end 
               if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 3
                 result.subsubseries = value['attributes']['parent_unittitles_ssm']['attributes']['value'][2]       
-                result.subsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssm']['attributes']['value'][2])         
+                result.subsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssim']['attributes']['value'][2])         
               end 
               if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 4
                 result.subsubsubseries = value['attributes']['parent_unittitles_ssm']['attributes']['value'][2]       
-                result.subsubsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssm']['attributes']['value'][2])         
+                result.subsubsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssim']['attributes']['value'][2])         
               end 
           end
           
