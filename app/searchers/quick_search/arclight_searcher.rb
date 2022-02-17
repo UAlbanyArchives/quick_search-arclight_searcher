@@ -15,39 +15,39 @@ module QuickSearch
         @results_list = []
 
         #@match_fields = ['title_ssm', ]
-
         @response['data'].each do |value|
+	  byebug
           result = OpenStruct.new
-          result.title = value['attributes']['title_ssm'][0]
+          result.title = value['attributes']['title_ssm']['attributes']['value'][0]
           result.link = value['links']['self']
           if value['attributes'].key?('normalized_date_ssm')
-            result.date = value['attributes']['normalized_date_ssm'][0]
+            result.date = value['attributes']['normalized_date_ssm']['attributes']['value'][0]
           end
           if value['attributes'].key?('collection_ssm')
-            result.collection = [value['attributes']['collection_ssm'][0], collection_builder(value['attributes']['ead_ssi']).to_s]
+            result.collection = [value['attributes']['collection_ssm']['attributes']['value'][0], collection_builder(value['attributes']['ead_ssi']['attributes']['value'][0]).to_s]
           end
           
           if value['attributes'].key?('parent_unittitles_ssm')
-              if value['attributes']['parent_unittitles_ssm'].length > 1
-                result.series = value['attributes']['parent_unittitles_ssm'][1]       
-                result.series_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi'] + value['attributes']['parent_ssm'][1])         
+              if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 1
+                result.series = value['attributes']['parent_unittitles_ssm']['attributes']['value'][1]       
+                result.series_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssm']['attributes']['value'][1])         
               end
-              if value['attributes']['parent_unittitles_ssm'].length > 2
-                result.subseries = value['attributes']['parent_unittitles_ssm'][2]       
-                result.subseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi'] + value['attributes']['parent_ssm'][2])         
+              if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 2
+                result.subseries = value['attributes']['parent_unittitles_ssm']['attributes']['value'][2]       
+                result.subseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssm']['attributes']['value'][2])         
               end 
-              if value['attributes']['parent_unittitles_ssm'].length > 3
-                result.subsubseries = value['attributes']['parent_unittitles_ssm'][2]       
-                result.subsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi'] + value['attributes']['parent_ssm'][2])         
+              if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 3
+                result.subsubseries = value['attributes']['parent_unittitles_ssm']['attributes']['value'][2]       
+                result.subsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssm']['attributes']['value'][2])         
               end 
-              if value['attributes']['parent_unittitles_ssm'].length > 4
-                result.subsubsubseries = value['attributes']['parent_unittitles_ssm'][2]       
-                result.subsubsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi'] + value['attributes']['parent_ssm'][2])         
+              if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 4
+                result.subsubsubseries = value['attributes']['parent_unittitles_ssm']['attributes']['value'][2]       
+                result.subsubsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['ead_ssi']['attributes']['value'][0] + value['attributes']['parent_ssm']['attributes']['value'][2])         
               end 
           end
           
           if value['attributes'].key?('repository_ssm')
-            result.collecting_area = value['attributes']['repository_ssm'][0]
+            result.collecting_area = value['attributes']['repository_ssm']['attributes']['value'][0]
           end
           
           if value['attributes']['has_online_content_ssim'][0] == "true"
@@ -56,7 +56,7 @@ module QuickSearch
 
           @results_list << result
         end
-
+	
         @results_list
       end
 
