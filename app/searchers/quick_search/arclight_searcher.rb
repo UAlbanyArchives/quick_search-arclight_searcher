@@ -16,7 +16,6 @@ module QuickSearch
 
         #@match_fields = ['title_ssm', ]
         @response['data'].each do |value|
-	  byebug
           result = OpenStruct.new
           result.title = value['attributes']['title_ssm']['attributes']['value'][0]
           result.link = value['links']['self']
