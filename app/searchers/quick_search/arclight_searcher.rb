@@ -87,7 +87,7 @@ module QuickSearch
     end
 
     def loaded_link
-      "https://archives.albany.edu/description?search_field=all_fields&q=" + http_request_queries['not_escaped']
+      "https://archives.albany.edu/description?search_field=all_fields&group=true&q=" + http_request_queries['not_escaped']
     end
 
   end
