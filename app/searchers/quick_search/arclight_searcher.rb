@@ -52,6 +52,17 @@ module QuickSearch
           
           if value['attributes'].key?('repository_ssim')
             result.collecting_area = value['attributes']['repository_ssim']['attributes']['value']
+            if result.collecting_area == "University Archives"
+              result.collecting_area_url = URI::join(base_url, +"/description/repositories/ua"
+            elsif result.collecting_area == "New York State Modern Political Archive"
+              result.collecting_area_url = URI::join(base_url, +"/description/repositories/apap"
+            elsif result.collecting_area == "National Death Penalty Archive"
+              result.collecting_area_url = URI::join(base_url, +"/description/repositories/ndpa"
+            elsif result.collecting_area == "Business, Literary, and Local History Manuscripts"
+              result.collecting_area_url = URI::join(base_url, +"/description/repositories/mss"
+            else
+              result.collecting_area_url = URI::join(base_url, +"/description/repositories/ger"
+            end
           end
           
           if value['attributes']['has_online_content_ssim'][0] == "true"
