@@ -27,31 +27,31 @@ module QuickSearch
             if value['attributes'].key?('ead_ssi')
               result.collection = [value['attributes']['collection_ssim']['attributes']['value'], collection_builder(value['attributes']['ead_ssi']['attributes']['value']).to_s]
             else
-              result.collection = [value['attributes']['collection_ssim']['attributes']['value'], collection_builder(value['attributes']['parent_ssi']['attributes']['value']).to_s]
+              result.collection = [value['attributes']['collection_ssim']['attributes']['value'], collection_builder(value['attributes']['parent_ssim']['attributes']['value']).to_s]
             end
           end
           
           if value['attributes'].key?('parent_unittitles_ssm')
               if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 1
                 result.series = value['attributes']['parent_unittitles_ssm']['attributes']['value'][1]       
-                result.series_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['parent_ssi']['attributes']['value'] + value['attributes']['parent_ssim']['attributes']['value'][1])         
+                result.series_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['parent_ssim']['attributes']['value'][0] + value['attributes']['parent_ssim']['attributes']['value'][1])         
               end
               if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 2
                 result.subseries = value['attributes']['parent_unittitles_ssm']['attributes']['value'][2]       
-                result.subseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['parent_ssi']['attributes']['value'] + value['attributes']['parent_ssim']['attributes']['value'][2])         
+                result.subseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['parent_ssim']['attributes']['value'][0] + value['attributes']['parent_ssim']['attributes']['value'][2])         
               end 
               if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 3
                 result.subsubseries = value['attributes']['parent_unittitles_ssm']['attributes']['value'][2]       
-                result.subsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['parent_ssi']['attributes']['value'] + value['attributes']['parent_ssim']['attributes']['value'][2])         
+                result.subsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['parent_ssim']['attributes']['value'][0] + value['attributes']['parent_ssim']['attributes']['value'][2])         
               end 
               if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 4
                 result.subsubsubseries = value['attributes']['parent_unittitles_ssm']['attributes']['value'][2]       
-                result.subsubsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['parent_ssi']['attributes']['value'] + value['attributes']['parent_ssim']['attributes']['value'][2])         
+                result.subsubsubseries_url = URI::join(base_url, +"/description/catalog/" + value['attributes']['parent_ssim']['attributes']['value'][0] + value['attributes']['parent_ssim']['attributes']['value'][2])         
               end 
           end
           
           if value['attributes'].key?('repository_ssim')
-            result.collecting_area = value['attributes']['repository_ssim']['attributes']['value'][0]
+            result.collecting_area = value['attributes']['repository_ssim']['attributes']['value']
           end
           
           if value['attributes']['has_online_content_ssim'][0] == "true"
