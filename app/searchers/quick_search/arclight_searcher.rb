@@ -22,8 +22,8 @@ module QuickSearch
           if value['attributes'].key?('normalized_date_ssm')
             result.date = value['attributes']['normalized_date_ssm']['attributes']['value'][0]
           end
-          if value['attributes'].key?('collection_ssm')
-            result.collection = [value['attributes']['collection_ssm']['attributes']['value'][0], collection_builder(value['attributes']['ead_ssi']['attributes']['value'][0]).to_s]
+          if value['attributes'].key?('collection_ssim')
+            result.collection = [value['attributes']['collection_ssim']['attributes']['value'][0], collection_builder(value['attributes']['ead_ssi']['attributes']['value'][0]).to_s]
           end
           
           if value['attributes'].key?('parent_unittitles_ssm')
