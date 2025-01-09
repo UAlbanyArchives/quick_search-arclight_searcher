@@ -8,7 +8,7 @@ module QuickSearch
     end
 
     def results
-      raise @response
+      
       if results_list
         results_list
 
@@ -27,10 +27,10 @@ module QuickSearch
             if value['attributes'].key?('ead_ssi')
               result.collection = [value['attributes']['collection_ssim']['attributes']['value'], collection_builder(value['attributes']['ead_ssi']['attributes']['value']).to_s]
             else
-              result.collection = [value['attributes']['collection_ssim']['attributes']['value'], collection_builder(value['attributes']['parent_ssim']['attributes']['value']).to_s]
+              result.collection = [value['attributes']['collection_ssim']['attributes']['value'], collection_builder(value['attributes']['parent_ssim']['attributes']['value'][0]).to_s]
             end
           end
-          
+          puts result
           if value['attributes'].key?('parent_unittitles_ssm')
               if value['attributes']['parent_unittitles_ssm']['attributes']['value'].length > 1
                 result.series = value['attributes']['parent_unittitles_ssm']['attributes']['value'][1]       
