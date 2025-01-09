@@ -8,6 +8,7 @@ module QuickSearch
     end
 
     def results
+      raise @response
       if results_list
         results_list
 
